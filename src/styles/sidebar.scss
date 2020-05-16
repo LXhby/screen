@@ -1,0 +1,142 @@
+#app {
+
+  .main-container {
+    height: calc(100vh - 70px);
+    overflow: hidden;
+    transition: margin-left .28s;
+    position: relative;
+    background: rgba(2, 21, 48, 1);
+  }
+
+  .sidebar-container {
+    background-color: $menuBg;
+
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .svg-icon {
+      margin-right: 16px;
+    }
+  }
+
+  //导航设置
+  .nav-toplist {
+    width: 1200px;
+    margin: auto;
+    height: $menuNavHeight;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    .right-menu-item {
+      width: 258px;
+      height: 100%;
+      line-height: $menuNavHeight;
+      text-align: right;
+    }
+
+    .el-menu-demo {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .el-menu-item {
+        height: $menuNavHeight;
+        line-height: $menuNavHeight;
+        font-size: $menuNavTextSize;
+        padding: 0 60px;
+        // border-bottom-width: 3px;
+
+
+        &:hover {
+          color: $menuHover !important;
+          border-bottom-color: $menuHover !important;
+        }
+      }
+    }
+
+    .el-submenu {
+      font-size: $menuNavTextSize;
+      height: $menuNavHeight;
+      line-height: $menuNavHeight;
+    }
+
+    .el-submenu__title {
+      padding: 0 60px;
+      font-size: $menuNavTextSize;
+      height: $menuNavHeight !important;
+      line-height: $menuNavHeight !important;
+      // border-bottom-width: 3px;
+    }
+
+    .el-menu--horizontal {
+      border-bottom-color: $subMenuBg;
+    }
+  }
+
+
+
+  // menu hover
+  .submenu-title-noDropdown,
+  .el-submenu__title {
+    &:hover {
+      color: $menuHover !important;
+    }
+  }
+
+  .is-active>.el-submenu__title {
+    color: $subMenuActiveText !important;
+  }
+
+  & .nest-menu .el-submenu>.el-submenu__title,
+  & .el-submenu .el-menu-item {
+    min-width: $sideBarWidth !important;
+    background-color: $subMenuBg !important;
+
+    &:hover {
+      color: $subMenuHover !important;
+    }
+  }
+}
+
+// when menu collapsed
+.el-menu--vertical {
+  &>.el-menu {
+    .svg-icon {
+      margin-right: 16px;
+    }
+  }
+
+  .nest-menu .el-submenu>.el-submenu__title,
+  .el-menu-item {
+    &:hover {
+      // you can use $subMenuHover
+      color: $menuHover !important;
+    }
+  }
+
+  // the scroll bar appears when the subMenu is too long
+  >.el-menu--popup {
+    max-height: 100vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-track-piece {
+      background: #d3dce6;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #99a9bf;
+      border-radius: 20px;
+    }
+  }
+}
