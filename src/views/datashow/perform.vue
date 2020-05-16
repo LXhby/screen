@@ -13,7 +13,9 @@
         </el-col>
       </el-row>
     </div>
-    <scrollline />
+    <div class="right-line">
+      <scrollline />
+    </div>
   </div>
 </template>
 
@@ -81,14 +83,19 @@ export default {
 .perform {
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+  width: 1350px;
+}
+.block-line {
+  width: 1225px;
 }
 .grid-content {
-  margin-bottom: 50px;
+  margin-bottom: 85px;
 }
 .title {
+  margin: 12px 0 10px;
   color: #fff;
-  font-size: 14px;
-  height: 32px;
+  font-size: 18px;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -98,15 +105,13 @@ export default {
   -webkit-box-orient: vertical;
 }
 .time {
-  padding-top: 10px;
   color: #5cb79a;
-  font-size: 12px;
+  font-size: 16px;
 }
 .showimg {
   position: relative;
   padding-top: 60%;
   width: 100%;
-  margin-bottom: 10px;
   img {
     position: absolute;
     top: 0;
