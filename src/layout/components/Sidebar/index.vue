@@ -8,12 +8,12 @@
           :default-active="activeIndex"
           :text-color="variables.menuText"
           :active-text-color="variables.menuActiveText"
-          class="el-menu-demo"
+          class="zd-menu-demo"
           mode="horizontal"
           @select="handleSelect"
         >
-          <el-menu-item index="home">成果展示</el-menu-item>
-          <el-submenu index="2">
+          <el-menu-item index="home" class="zd-menu-item">成果展示</el-menu-item>
+          <el-submenu index="2" class="zd-submenu">
             <template slot="title">风貌展示</template>
             <el-menu-item index="history">历史记录</el-menu-item>
             <el-menu-item index="train">培训展示</el-menu-item>

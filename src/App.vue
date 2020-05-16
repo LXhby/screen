@@ -46,7 +46,7 @@ export default {
 <style lang="scss">
 body {
   font-family: PingFangSC-Regular, PingFang SC;
-  background-color: #01193c;
+  background-color: #021530;
   font-size: 18px;
 }
 
