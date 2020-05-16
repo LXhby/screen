@@ -1,6 +1,6 @@
 <template>
   <div class="main-box">
-    <div class="common-content construc">
+    <div class="zbcommon-content construc">
       <div class="img-list">
         <el-carousel indicator-position="outside" :autoplay="false">
           <el-carousel-item v-for="item in shuflist" :key="item.id">
@@ -12,11 +12,7 @@
         </el-carousel>
       </div>
       <el-row :gutter="30">
-        <el-col
-          v-for="(item, index) in timelist"
-          :key="index"
-          :span="6"
-        >
+        <el-col v-for="(item, index) in timelist" :key="index" :span="6">
           <div class="grid-content bg-purple">
             <div class="showimg">
               <img :src="item.cover" alt>
@@ -88,7 +84,7 @@ export default {
 .main-box {
   margin: 0 auto;
   box-sizing: border-box;
-  width: 1340px;
+  width: 100%;
   height: 100%;
   overflow: auto;
   padding: 20px 0;
