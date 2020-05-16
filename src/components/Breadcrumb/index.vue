@@ -85,23 +85,33 @@ export default {
   background: $mainBg;
   height: 125px;
   line-height: 125px;
+  display: flex;
+  align-items: center;
   .title {
     display: inline-block;
     color: #fff;
     cursor: text;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 40px;
     vertical-align: top;
   }
   .zd-breadcrumb-item {
     height: 125px;
     line-height: 125px;
+    font-size: 18px;
+    color: #fff;
+    .el-breadcrumb__inner {
+      color: #fff;
+    }
+    .no-redirect {
+      color: #fff;
+      cursor: text;
+    }
   }
 }
-.app-breadcrumb.el-breadcrumb {
+.app-breadcrumb.el-breadcrumb-item {
   display: inline-block;
-  font-size: 14px;
-  line-height: 40px;
+
   vertical-align: top;
   .no-redirect {
     color: #fff;
