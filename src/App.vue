@@ -73,15 +73,5 @@ p {
   width: 1340px;
   height: 100%;
   margin: auto;
-  .block-line {
-    box-sizing: border-box;
-    flex: 1;
-    height: 100%;
-    overflow: auto;
-    padding-bottom: 20px;
-
-    padding-right: 100px;
-    padding-left: 4px;
-  }
 }
 </style>

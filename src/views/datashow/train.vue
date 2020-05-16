@@ -8,63 +8,68 @@
         @click="handlechange(item)"
       >{{ item }}</el-button>
     </el-row>
-    <div class="block-line">
-      <el-timeline>
-        <el-timeline-item
-          v-for="(item, index) in timelist"
-          :key="index"
-          :timestamp="getTime(item.createTime)"
-          color="#29CB97"
-          placement="top"
-        >
-          <el-card class="box-card" :body-style="{ padding: '0px' }">
-            <div class="card-item" @click="gopage(item.id)">
-              <h3 class="hd-title">{{ item.title }}</h3>
-              <p class="type">培训类型：{{ item.newsType }}</p>
-              <p class="hm-txt" v-html="item.content" />
-              <el-row :gutter="6">
-                <el-col :span="6">
-                  <div class="grid-content bg-purple">
-                    <div class="showimg">
-                      <img :src="item.cover" alt>
-                      <div class="content-title">项目计划</div>
-                      <p />
+    <div class="el-block-line">
+      <div class="right">
+        <el-timeline>
+          <el-timeline-item
+            v-for="(item, index) in timelist"
+            :key="index"
+            :timestamp="getTime(item.createTime)"
+            color="#29CB97"
+            placement="top"
+          >
+            <el-card class="box-card" :body-style="{ padding: '0px' }">
+              <div class="card-item" @click="gopage(item.id)">
+                <h3 class="hd-title">{{ item.title }}</h3>
+                <p class="type">培训类型：{{ item.newsType }}</p>
+                <p class="hm-txt" v-html="item.content" />
+                <el-row :gutter="6">
+                  <el-col :span="6">
+                    <div class="grid-content bg-purple">
+                      <div class="showimg">
+                        <img :src="item.cover" alt>
+                        <div class="content-title">项目计划</div>
+                        <p />
+                      </div>
                     </div>
-                  </div>
-                </el-col>
-                <el-col :span="6">
-                  <div class="grid-content bg-purple">
-                    <div class="showimg">
-                      <img :src="item.trainingimg" alt>
-                      <div class="content-title">项目培训照片</div>
-                      <p />
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content bg-purple">
+                      <div class="showimg">
+                        <img :src="item.trainingimg" alt>
+                        <div class="content-title">项目培训照片</div>
+                        <p />
+                      </div>
                     </div>
-                  </div>
-                </el-col>
-                <el-col :span="6">
-                  <div class="grid-content bg-purple">
-                    <div class="showimg">
-                      <img :src="item.signimg" alt>
-                      <div class="content-title">项目培训签到表</div>
-                      <p />
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content bg-purple">
+                      <div class="showimg">
+                        <img :src="item.signimg" alt>
+                        <div class="content-title">项目培训签到表</div>
+                        <p />
+                      </div>
                     </div>
-                  </div>
-                </el-col>
-                <el-col :span="6">
-                  <div class="grid-content bg-purple">
-                    <div class="showimg">
-                      <video class="vedi" controls preload="auto" :src="item.video" />
-                      <div class="content-title">项目培训视频</div>
-                      <p />
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content bg-purple">
+                      <div class="showimg">
+                        <video class="vedi" controls preload="auto" :src="item.video" />
+                        <div class="content-title">项目培训视频</div>
+                        <p />
+                      </div>
                     </div>
-                  </div>
-                </el-col>
-              </el-row>
-            </div>
-          </el-card>
-        </el-timeline-item>
-      </el-timeline>
-      <scrollline />
+                  </el-col>
+                </el-row>
+              </div>
+            </el-card>
+          </el-timeline-item>
+        </el-timeline>
+      </div>
+
+      <div class="right-line">
+        <scrollline />
+      </div>
     </div>
   </div>
 </template>
@@ -173,9 +178,26 @@ export default {
 
 <style lang="scss">
 .tranin {
-  .block-line {
+  .el-block-line {
+    position: relative;
+    height: calc(100% - 76px);
+    box-sizing: border-box;
     display: flex;
+    padding-bottom: 20px;
     justify-content: space-between;
+
+    .right {
+      width: calc(100% - 2px);
+      height: 100%;
+      overflow: auto;
+    }
+  }
+  .right-line {
+    position: absolute;
+    width: 2px;
+    height: 90%;
+    right: 0;
+    top: 0;
   }
   .el-button {
     background: rgba(21, 47, 83, 1);
