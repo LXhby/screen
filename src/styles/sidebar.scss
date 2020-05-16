@@ -75,16 +75,16 @@
   & .nest-menu .el-submenu > .el-submenu__title,
   & .el-submenu .el-menu-item {
     min-width: $sideBarWidth !important;
-    background-color: $subMenuBg !important;
+    background-color: $menuHover !important;
 
     &:hover {
-      color: $subMenuHover !important;
+      color: $menuHover !important;
     }
   }
 }
 
 // when menu collapsed
-.el-menu--vertical {
+.el-menu--horizontal {
   & > .el-menu {
     .svg-icon {
       margin-right: 16px;
@@ -95,7 +95,8 @@
   .el-menu-item {
     &:hover {
       // you can use $subMenuHover
-      color: $menuHover !important;
+      color: #fff !important;
+      background-color: $menuHover !important;
     }
   }
 
