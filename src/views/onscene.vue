@@ -1,5 +1,5 @@
 <template>
-  <div class="common-content">
+  <div class="zbcommon-content">
     <video id="myVideo" class="video-js">
       <source src="https://yiidev.cn/hls/test/index.m3u8" type="application/x-mpegURL4">
     </video>
@@ -33,13 +33,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.common-content {
+.zbcommon-content {
   overflow: auto;
   padding-bottom: 20px;
 }
 .video-js {
-  width: 100%;
-  height: 738px;
+  margin: 0 auto;
+  width: 1340px;
+  height: 754px;
   background: #021530;
   border: none;
 }
