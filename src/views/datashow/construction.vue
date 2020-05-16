@@ -15,11 +15,7 @@
         <el-col
           v-for="(item, index) in timelist"
           :key="index"
-          :xs="12"
-          :sm="6"
-          :md="6"
-          :lg="6"
-          :xl="1"
+          :span="6"
         >
           <div class="grid-content bg-purple">
             <div class="showimg">
@@ -90,11 +86,12 @@ export default {
 
 <style lang="scss" scoped>
 .main-box {
+  margin: 0 auto;
   box-sizing: border-box;
-  width: 100%;
+  width: 1340px;
   height: 100%;
   overflow: auto;
-  padding-top: 20px;
+  padding: 20px 0;
 }
 .top-img {
   width: 100%;

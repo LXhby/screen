@@ -100,7 +100,8 @@ export default {
 <style lang="scss" scoped>
 .common-content {
   padding: 38px 310px;
-  margin-top: 50px;
+  margin: 0 auto;
+  width: 1340px;
   background:rgba(59,80,140,0.3);
   color: #A0B5CC;
   h3 {

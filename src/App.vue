@@ -53,6 +53,10 @@ p {
   margin: 0;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .el-table__header {
   width: 100% !important;
 }
