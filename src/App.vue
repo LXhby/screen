@@ -63,7 +63,7 @@ body {
 }
 .common-content {
   box-sizing: border-box;
-  width: 1226px;
+  width: 1340px;
   height: 100%;
   margin: auto;
   .block-line {
