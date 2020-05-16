@@ -46,10 +46,11 @@
         // border-bottom-width: 3px;
 
         &:hover {
-          color: $menuHover !important;
+          color: #fff !important;
           border-bottom-color: $menuHover !important;
         }
       }
+
       .zd-submenu {
         margin: 0 60px;
       }
@@ -68,11 +69,11 @@
     }
   }
 
-  .is-active > .el-submenu__title {
+  .is-active>.el-submenu__title {
     color: $subMenuActiveText !important;
   }
 
-  & .nest-menu .el-submenu > .el-submenu__title,
+  & .nest-menu .el-submenu>.el-submenu__title,
   & .el-submenu .el-menu-item {
     min-width: $sideBarWidth !important;
     background-color: $menuHover !important;
@@ -85,13 +86,13 @@
 
 // when menu collapsed
 .el-menu--horizontal {
-  & > .el-menu {
+  &>.el-menu {
     .svg-icon {
       margin-right: 16px;
     }
   }
 
-  .nest-menu .el-submenu > .el-submenu__title,
+  .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {
     &:hover {
       // you can use $subMenuHover
@@ -101,7 +102,7 @@
   }
 
   // the scroll bar appears when the subMenu is too long
-  > .el-menu--popup {
+  >.el-menu--popup {
     max-height: 100vh;
     overflow-y: auto;
 

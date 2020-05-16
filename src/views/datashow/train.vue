@@ -1,5 +1,5 @@
 <template>
-  <div class="common-content tranin">
+  <div class="zbcommon-content tranin">
     <div class="block-line">
       <el-row class="el-btns" style="margin-bottom:40px;">
         <el-button
@@ -22,8 +22,8 @@
             <div class="card-item" @click="gopage(item.id)">
               <h3 class="hd-title">{{ item.title }}</h3>
               <p class="type">培训类型：{{ item.newsType }}</p>
-              <p v-html="item.content" />
-              <el-row :gutter="30">
+              <p class="hm-txt" v-html="item.content" />
+              <el-row :gutter="6">
                 <el-col :span="6">
                   <div class="grid-content bg-purple">
                     <div class="showimg">
@@ -207,17 +207,28 @@ export default {
   .box-card {
     display: inline-block;
     box-sizing: border-box;
-    width: 832px;
-    padding: 20px 16px 14px 16px;
+    width: 960px;
+    padding: 25px 22px 33px 22px;
     background-image: linear-gradient(to right bottom, #415d95, #333e80);
     border-style: none;
     color: #fff;
     .card-item p:nth-child(3) {
       color: #a0b5cc;
     }
-    h4 {
-      margin: 0 0 12px 0;
-      font-size: 16px;
+    h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+    .type {
+      margin: 0;
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+    .hm-txt {
+      font-size: 18px;
+      color: rgba(160, 181, 204, 1);
+      line-height: 25px;
+      margin-bottom: 10px;
     }
     .time {
       margin: 0;

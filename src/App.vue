@@ -49,6 +49,9 @@ body {
   background-color: #021530;
   font-size: 18px;
 }
+p {
+  margin: 0;
+}
 
 .el-table__header {
   width: 100% !important;
@@ -61,7 +64,7 @@ body {
 .gutter {
   display: table-cell !important;
 }
-.common-content {
+.zbcommon-content {
   box-sizing: border-box;
   width: 1340px;
   height: 100%;
@@ -72,7 +75,7 @@ body {
     height: 100%;
     overflow: auto;
     padding-bottom: 20px;
-    padding-top: 20px;
+
     padding-right: 100px;
     padding-left: 4px;
   }

@@ -3,7 +3,7 @@
     <div class="title">当前位置：</div>
     <el-breadcrumb class="app-breadcrumb" separator="/">
       <transition-group name="breadcrumb">
-        <el-breadcrumb-item v-for="item in levelList" :key="item.path">
+        <el-breadcrumb-item v-for="item in levelList" :key="item.path" class="zd-breadcrumb-item">
           <span class="no-redirect">{{ item.meta.title }}</span>
           <!-- <a v-else @click.prevent="handleLink(item)">{{ item.meta.title }}</a> -->
         </el-breadcrumb-item>
@@ -81,8 +81,10 @@ export default {
 <style lang="scss" scoped>
 .bread-box {
   width: $centerWidth;
+  margin: auto;
   background: $mainBg;
-  margin: 20px auto 0 auto;
+  height: 125px;
+  line-height: 125px;
   .title {
     display: inline-block;
     color: #fff;
@@ -90,6 +92,10 @@ export default {
     font-size: 14px;
     line-height: 40px;
     vertical-align: top;
+  }
+  .zd-breadcrumb-item {
+    height: 125px;
+    line-height: 125px;
   }
 }
 .app-breadcrumb.el-breadcrumb {
