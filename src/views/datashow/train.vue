@@ -1,7 +1,7 @@
 <template>
   <div class="common-content tranin">
     <div class="block-line">
-      <el-row style="margin-bottom:20px;">
+      <el-row class="el-btns" style="margin-bottom:40px;">
         <el-button
           v-for="(item, index) in list"
           :key="index"
@@ -195,10 +195,14 @@ export default {
     padding: 0;
   }
   .el-timeline-item__timestamp {
+    margin-bottom: 24px;
     color: #fff;
   }
   .el-timeline-item__tail {
     border: none;
+  }
+  .el-timeline-item__wrapper {
+    margin-bottom: 10px;
   }
   .box-card {
     display: inline-block;
@@ -208,6 +212,9 @@ export default {
     background-image: linear-gradient(to right bottom, #415d95, #333e80);
     border-style: none;
     color: #fff;
+    .card-item p:nth-child(3) {
+      color: #a0b5cc;
+    }
     h4 {
       margin: 0 0 12px 0;
       font-size: 16px;

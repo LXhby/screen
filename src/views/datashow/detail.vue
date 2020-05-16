@@ -9,7 +9,7 @@
       <img v-if="info.menuId !=3" :src="info.cover" alt class="img1">
       <div v-else>
         <el-row :gutter="30">
-          <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="1">
+          <el-col>
             <div class="grid-content bg-purple">
               <div class="showimg">
                 <img :src="info.cover" alt>
@@ -18,7 +18,7 @@
               <div class="content-title">项目计划</div>
             </div>
           </el-col>
-          <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="1">
+          <el-col>
             <div class="grid-content bg-purple">
               <div class="showimg">
                 <img :src="info.trainingimg" alt>
@@ -27,7 +27,7 @@
               <div class="content-title">项目培训照片</div>
             </div>
           </el-col>
-          <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="1">
+          <el-col>
             <div class="grid-content bg-purple">
               <div class="showimg">
                 <img :src="info.signimg" alt>
@@ -36,7 +36,7 @@
               <div class="content-title">项目培训签到表</div>
             </div>
           </el-col>
-          <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="1">
+          <el-col>
             <div class="grid-content bg-purple">
               <div class="showimg">
                 <video class="vedi" controls preload="auto" :src="info.video" />
@@ -98,51 +98,61 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h3 {
-  text-align: center;
-}
-.nav-top {
-  width: 680px;
-  margin: 20px auto;
-  text-align: center;
-  .time {
-    padding: 0 60px;
-    color: #999;
-    height: 30px;
-    line-height: 30px;
-    .one {
-      float: left;
+.common-content {
+  padding: 38px 310px;
+  margin-top: 50px;
+  background:rgba(59,80,140,0.3);
+  color: #A0B5CC;
+  h3 {
+    margin: 0;
+    font-size: 42px;
+    text-align: center;
+    color: #fff;
+  }
+  .nav-top {
+    width: 680px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 16px;
+    .time {
+      padding: 0 60px;
+      margin-bottom: 50px;
+      height: 30px;
+      line-height: 30px;
+      .one {
+        margin-right: 35px;
+      }
+      // .two {
+      //   float: right;
+      // }
     }
-    .two {
-      float: right;
+    .img1 {
+      margin-top: 20px;
     }
   }
-  .img1 {
-    margin-top: 20px;
+  .bg-purple {
+    margin: 12px 0;
   }
-}
-.bg-purple {
-  margin: 20px 0;
-}
-.showimg {
-  position: relative;
-  padding-top: 60%;
-  width: 100%;
-  margin-bottom: 10px;
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .showimg {
+    position: relative;
+    padding-top: 60%;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .vedi {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    margin-bottom: 10px;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .vedi {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 </style>
