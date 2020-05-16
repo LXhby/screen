@@ -1,15 +1,14 @@
 <template>
   <div class="zbcommon-content tranin">
+    <el-row class="el-btns" style="margin-bottom:40px;">
+      <el-button
+        v-for="(item, index) in list"
+        :key="index"
+        :class="{ activebtn: activeName == item }"
+        @click="handlechange(item)"
+      >{{ item }}</el-button>
+    </el-row>
     <div class="block-line">
-      <el-row class="el-btns" style="margin-bottom:40px;">
-        <el-button
-          v-for="(item, index) in list"
-          :key="index"
-          :class="{ activebtn: activeName == item }"
-          @click="handlechange(item)"
-        >{{ item }}</el-button>
-      </el-row>
-
       <el-timeline>
         <el-timeline-item
           v-for="(item, index) in timelist"
@@ -65,8 +64,8 @@
           </el-card>
         </el-timeline-item>
       </el-timeline>
+      <scrollline />
     </div>
-    <scrollline />
   </div>
 </template>
 
@@ -174,19 +173,19 @@ export default {
 
 <style lang="scss">
 .tranin {
-  display: flex;
-  justify-content: space-between;
   .block-line {
-    .activebtn {
-      background: $menuActiveText;
-      color: #fff;
-      border-color: $menuActiveText;
-    }
+    display: flex;
+    justify-content: space-between;
   }
   .el-button {
     background: rgba(21, 47, 83, 1);
     color: rgba(97, 124, 153, 1);
     border-color: rgba(21, 47, 83, 1);
+  }
+  .activebtn {
+    background: $menuActiveText;
+    color: #fff;
+    border-color: $menuActiveText;
   }
   .el-card {
     border-radius: 0;
