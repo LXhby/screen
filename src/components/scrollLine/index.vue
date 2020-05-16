@@ -1,6 +1,6 @@
 <template>
   <div class="scrool-line">
-    <img src="../../../static/img/angle.png" alt="" class="angle">
+    <img src="../../../static/img/angle.png" alt class="angle">
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {}
 .scrool-line {
   position: relative;
   width: 2px;
-  height: 400px;
+  height: 100%;
   background: rgba(160, 181, 204, 0.4);
   .angle {
     position: absolute;
