@@ -1,9 +1,8 @@
 #app {
-
   .main-container {
     height: calc(100vh - 70px);
     overflow: hidden;
-    transition: margin-left .28s;
+    transition: margin-left 0.28s;
     position: relative;
     background: rgba(2, 21, 48, 1);
   }
@@ -24,14 +23,10 @@
 
   //导航设置
   .nav-toplist {
-    width: 1200px;
     margin: auto;
-    height: $menuNavHeight;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
 
     .right-menu-item {
       width: 258px;
@@ -47,40 +42,23 @@
       justify-content: center;
 
       .zd-menu-item {
-        height: $menuNavHeight;
-        line-height: $menuNavHeight;
-        font-size: $menuNavTextSize;
         margin: 0 60px;
         // border-bottom-width: 3px;
-
 
         &:hover {
           color: $menuHover !important;
           border-bottom-color: $menuHover !important;
         }
       }
-    }
-
-    .zd-submenu {
-      font-size: $menuNavTextSize;
-      height: $menuNavHeight;
-      line-height: $menuNavHeight;
-    }
-
-    .zd-submenu__title {
-      padding: 0 60px;
-      font-size: $menuNavTextSize;
-      height: $menuNavHeight !important;
-      line-height: $menuNavHeight !important;
-      // border-bottom-width: 3px;
+      .zd-submenu {
+        margin: 0 60px;
+      }
     }
 
     .el-menu--horizontal {
       border-bottom-color: $subMenuBg;
     }
   }
-
-
 
   // menu hover
   .submenu-title-noDropdown,
@@ -90,11 +68,11 @@
     }
   }
 
-  .is-active>.el-submenu__title {
+  .is-active > .el-submenu__title {
     color: $subMenuActiveText !important;
   }
 
-  & .nest-menu .el-submenu>.el-submenu__title,
+  & .nest-menu .el-submenu > .el-submenu__title,
   & .el-submenu .el-menu-item {
     min-width: $sideBarWidth !important;
     background-color: $subMenuBg !important;
@@ -107,13 +85,13 @@
 
 // when menu collapsed
 .el-menu--vertical {
-  &>.el-menu {
+  & > .el-menu {
     .svg-icon {
       margin-right: 16px;
     }
   }
 
-  .nest-menu .el-submenu>.el-submenu__title,
+  .nest-menu .el-submenu > .el-submenu__title,
   .el-menu-item {
     &:hover {
       // you can use $subMenuHover
@@ -122,7 +100,7 @@
   }
 
   // the scroll bar appears when the subMenu is too long
-  >.el-menu--popup {
+  > .el-menu--popup {
     max-height: 100vh;
     overflow-y: auto;
 

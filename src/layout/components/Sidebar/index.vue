@@ -20,7 +20,7 @@
             <el-menu-item index="perform">项目执行</el-menu-item>
             <el-menu-item index="construction">团队建设</el-menu-item>
           </el-submenu>
-          <el-menu-item index="onscene">连线现场</el-menu-item>
+          <el-menu-item index="onscene" class="zd-menu-item">连线现场</el-menu-item>
         </el-menu>
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
       </div>
