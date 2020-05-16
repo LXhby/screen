@@ -6,7 +6,7 @@
       @click="handleClickOutside"
     />
     <sidebar class="sidebar-container" />
-    <div :class="{ hasTagsView: needTagsView }" class="main-container">
+    <div :class="{ hasTagsView: needTagsView }" class="el-main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
         <!-- <navbar /> -->
         <!-- <tags-view v-if="needTagsView" /> -->

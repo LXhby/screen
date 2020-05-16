@@ -23,7 +23,7 @@
 
   //导航设置
   .nav-toplist {
-    height: 90px;
+
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -37,15 +37,15 @@
     }
 
     .zd-menu-demo {
-      height: 100%;
+
       display: flex;
       align-items: center;
       justify-content: center;
 
       .zd-menu-item {
         margin: 0 60px;
-        height: 100%;
-        line-height: 90px;
+
+
         // border-bottom-width: 3px;
 
         &:hover {
@@ -55,14 +55,7 @@
       }
 
       .zd-submenu {
-        height: 90px;
-        line-height: 90px;
         margin: 0 60px;
-
-        .el-submenu__title {
-          height: 100%;
-          line-height: 100%;
-        }
       }
     }
 
