@@ -8,7 +8,9 @@ import Element from 'element-ui'
 import './styles/element-variables.scss'
 
 import '@/styles/index.scss' // global css
-
+import 'fullpage.js/vendors/scrolloverflow'
+import VueFullPage from 'vue-fullpage.js'
+Vue.use(VueFullPage)
 import App from './App'
 import store from './store'
 import router from './router'

@@ -1,20 +1,22 @@
 <template>
-  <div v-loading="loading" class="common-content perform">
+  <div v-loading="loading" class="perform">
     <div class="block-line">
-      <el-row :gutter="30">
-        <el-col v-for="(item, index) in timelist" :key="index" :span="6">
-          <div class="grid-content bg-purple" @click="gopage(item.id)">
-            <div class="showimg">
-              <img :src="item.cover" alt>
+      <div class="right">
+        <el-row :gutter="15">
+          <el-col v-for="(item, index) in timelist" :key="index" :span="6">
+            <div class="grid-content bg-purple" @click="gopage(item.id)">
+              <div class="showimg">
+                <img :src="item.cover" alt>
+              </div>
+              <div class="title">{{ item.title }}</div>
+              <div class="time">项目上线日期：{{ getupTimes(item.extInfo) }}</div>
             </div>
-            <div class="title">{{ item.title }}</div>
-            <div class="time">项目上线日期：{{ getupTimes(item.extInfo) }}</div>
-          </div>
-        </el-col>
-      </el-row>
-    </div>
-    <div class="right-line">
-      <scrollline />
+          </el-col>
+        </el-row>
+      </div>
+      <div class="right-line">
+        <scrollline />
+      </div>
     </div>
   </div>
 </template>
@@ -85,9 +87,30 @@ export default {
   justify-content: space-between;
   margin: 0 auto;
   width: 1350px;
+  padding-top: 88px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
 }
 .block-line {
-  width: 1225px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  .right {
+    width: 1225px;
+    height: 100%;
+    overflow: auto;
+  }
+  .right-line {
+    position: absolute;
+    width: 2px;
+    height: 90%;
+    right: 0;
+    top: 0;
+  }
 }
 .grid-content {
   margin-bottom: 85px;
