@@ -89,9 +89,9 @@ export default {
               normal: {
                 color: '#1DD0B7',
                 shadowColor: 'rgba(0, 0, 0, .3)',
-                shadowBlur: 0,
-                shadowOffsetY: 5,
-                shadowOffsetX: 5
+                shadowBlur: 0
+                // shadowOffsetY: 5,
+                // shadowOffsetX: 5
               }
             },
             itemStyle: {
@@ -99,9 +99,9 @@ export default {
               borderColor: '#fff',
               borderWidth: 1,
               shadowColor: 'rgba(0, 0, 0, .3)',
-              shadowBlur: 0,
-              shadowOffsetY: 2,
-              shadowOffsetX: 2
+              shadowBlur: 0
+              // shadowOffsetY: 2,
+              // shadowOffsetX: 2
             }
           }
         ]

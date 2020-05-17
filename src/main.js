@@ -24,13 +24,15 @@ import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 import scroll from 'vue-seamless-scroll'
 Vue.use(scroll)
-import ECharts from 'vue-echarts'
-Vue.component('chart', ECharts)
+// import ECharts from 'vue-echarts'
+// Vue.component('chart', ECharts)
 import Moment from 'moment'
 Vue.filter('convertTime', function(data, formatStr) {
   return Moment(data).format(formatStr)
 })
-
+import vuescroll from 'vuescroll'
+import 'vuescroll/dist/vuescroll.css'
+Vue.use(vuescroll)
 import Axios from 'axios'
 Vue.prototype.$ajax = Axios
 

@@ -115,7 +115,7 @@
                 <div class="center-top">医疗公益项目大数据</div>
                 <div class="center-one">
                   <el-row type="flex" class="left">
-                    <el-col :span="10">
+                    <el-col :span="10" class="left-oo">
                       <div class="one-item">
                         <h3 class="nav-title">受益人数</h3>
                         <div class="item-main">
@@ -139,7 +139,7 @@
                       </div>
                     </el-col>
                     <el-col :span="14">
-                      <Map :map-data="projProvinceData" style="width:400px;height:400px;" />
+                      <Map :map-data="projProvinceData" />
                     </el-col>
                   </el-row>
                 </div>
@@ -328,7 +328,8 @@ export default {
         this.generalData = res.data.generalData
         this.projectData = res.data.projectData
         this.quantityContolData = res.data.quantityContolData
-        console.log('this.quantityContolData', this.quantityContolData)
+        this.projProvinceData = res.data.projProvinceData
+        console.log('this.projProvinceData', this.projProvinceData)
         // this.monthrate();
         // this.monthnum();
       })

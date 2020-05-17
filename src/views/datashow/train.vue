@@ -9,87 +9,111 @@
       >{{ item }}</el-button>
     </el-row>
     <div class="el-block-line">
-      <div class="right">
-        <el-timeline>
-          <el-timeline-item
-            v-for="(item, index) in timelist"
-            :key="index"
-            :timestamp="getTime(item.createTime)"
-            color="#29CB97"
-            placement="top"
-          >
-            <el-card class="box-card" :body-style="{ padding: '0px' }">
-              <div class="card-item" @click="gopage(item.id)">
-                <h3 class="hd-title">{{ item.title }}</h3>
-                <p class="type">培训类型：{{ item.newsType }}</p>
-                <p class="hm-txt" v-html="item.content" />
-                <el-row :gutter="6">
-                  <el-col :span="6">
-                    <div class="grid-content bg-purple">
-                      <div class="showimg">
-                        <img :src="item.cover" alt>
-                        <div class="content-title">项目计划</div>
-                        <p />
+      <vue-scroll :ops="ops">
+        <div class="right">
+          <el-timeline>
+            <el-timeline-item
+              v-for="(item, index) in timelist"
+              :key="index"
+              :timestamp="getTime(item.createTime)"
+              color="#29CB97"
+              placement="top"
+            >
+              <el-card class="box-card" :body-style="{ padding: '0px' }">
+                <div class="card-item" @click="gopage(item.id)">
+                  <h3 class="hd-title">{{ item.title }}</h3>
+                  <p class="type">培训类型：{{ item.newsType }}</p>
+                  <p class="hm-txt" v-html="item.content" />
+                  <el-row :gutter="6">
+                    <el-col :span="6">
+                      <div class="grid-content bg-purple">
+                        <div class="showimg">
+                          <img :src="item.cover" alt>
+                          <div class="content-title">项目计划</div>
+                          <p />
+                        </div>
                       </div>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content bg-purple">
-                      <div class="showimg">
-                        <img :src="item.trainingimg" alt>
-                        <div class="content-title">项目培训照片</div>
-                        <p />
+                    </el-col>
+                    <el-col :span="6">
+                      <div class="grid-content bg-purple">
+                        <div class="showimg">
+                          <img :src="item.trainingimg" alt>
+                          <div class="content-title">项目培训照片</div>
+                          <p />
+                        </div>
                       </div>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content bg-purple">
-                      <div class="showimg">
-                        <img :src="item.signimg" alt>
-                        <div class="content-title">项目培训签到表</div>
-                        <p />
+                    </el-col>
+                    <el-col :span="6">
+                      <div class="grid-content bg-purple">
+                        <div class="showimg">
+                          <img :src="item.signimg" alt>
+                          <div class="content-title">项目培训签到表</div>
+                          <p />
+                        </div>
                       </div>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content bg-purple">
-                      <div class="showimg">
-                        <video class="vedi" controls preload="auto" :src="item.video" />
-                        <div class="content-title">项目培训视频</div>
-                        <p />
+                    </el-col>
+                    <el-col :span="6">
+                      <div class="grid-content bg-purple">
+                        <div class="showimg">
+                          <video class="vedi" controls preload="auto" :src="item.video" />
+                          <div class="content-title">项目培训视频</div>
+                          <p />
+                        </div>
                       </div>
-                    </div>
-                  </el-col>
-                </el-row>
-              </div>
-            </el-card>
-          </el-timeline-item>
-        </el-timeline>
-      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </el-card>
+            </el-timeline-item>
+          </el-timeline>
+        </div>
+      </vue-scroll>
 
-      <div class="right-line">
+      <!-- <div class="right-line">
         <scrollline />
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
 
 <script>
-import scrollline from '@/components/scrollLine/index'
+// import scrollline from '@/components/scrollLine/index'
 import moment from 'moment'
 import { queryAll } from '@/api/datashow'
 import { getpicUrl } from '@/utils/upload'
 import { getCssStsToken } from '@/api/datashow'
 export default {
   inject: ['reload'],
-  components: { scrollline },
+  // components: { scrollline },
   data() {
     return {
       activeName: '全部',
       list: ['全部', '业务项目', '工作技能', '法律法规', '制度标准'],
       timelist: [],
       loading: true,
-      firstSearch: {}
+      firstSearch: {},
+      ops: {
+        vuescroll: {
+          mode: 'native'
+        },
+        scrollPanel: {},
+        rail: {
+          background: 'rgba(160, 181, 204, 0.4)',
+          opacity: 0,
+          size: '2px',
+          specifyBorderRadius: false,
+          gutterOfEnds: null,
+          gutterOfSide: '2px',
+          keepShow: false
+        },
+        bar: {
+          size: '8px',
+          hoverStyle: true,
+          keepShow: true,
+          onlyShowBarOnScroll: false, // 是否只有滚动的时候才显示滚动条
+          background: 'transparent'
+        }
+      }
     }
   },
   created() {
@@ -311,6 +335,17 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
+    }
+  }
+  .__rail-is-vertical {
+    background: rgba(160, 181, 204, 0.4) !important;
+    .__bar-is-vertical {
+      // width: 0 !important;
+      // height: 0 !important;
+      // border-top: 8px solid transparent !important;
+      // border-left: 13px solid #29cb97 !important;
+      // border-bottom: 8px solid transparent !important;
+      // left: -13px !important;
     }
   }
 }
