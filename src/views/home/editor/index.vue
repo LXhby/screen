@@ -115,7 +115,7 @@
                 <div class="center-top">医疗公益项目大数据</div>
                 <div class="center-one">
                   <el-row type="flex" class="left">
-                    <el-col :span="12">
+                    <el-col :span="10">
                       <div class="one-item">
                         <h3 class="nav-title">受益人数</h3>
                         <div class="item-main">
@@ -138,8 +138,8 @@
                         </div>
                       </div>
                     </el-col>
-                    <el-col :span="12">
-                      <Map />
+                    <el-col :span="14">
+                      <Map :map-data="projProvinceData" style="width:400px;height:400px;" />
                     </el-col>
                   </el-row>
                 </div>
@@ -296,7 +296,8 @@ export default {
       patientQuantity: '',
       materialQuantity: '',
       totalPrice: '',
-      quantityContolData: []
+      quantityContolData: [],
+      projProvinceData: [] // Map数据
     }
   },
   computed: {
@@ -339,39 +340,6 @@ export default {
         'light'
       )
       console.log('myChart', myChart)
-    },
-    monthrate() {
-      var option = {
-        legend: {},
-        tooltip: {},
-        dataset: {
-          // 提供一份数据。
-          source: this.quantityContolData
-        },
-        // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
-        xAxis: { type: 'category', boundaryGap: false },
-        // 声明一个 Y 轴，数值轴。
-        yAxis: {},
-        series: [
-          {
-            type: 'line',
-            areaStyle: {},
-            name: '月度合格率',
-            encode: {
-              x: 'month',
-              // 将 "product" 列映射到 Y 轴。
-              y: 'passRate'
-            }
-          }
-        ]
-      }
-      this.$nextTick(() => {
-        const myChart = this.$echarts.init(
-          document.getElementById('columfirst'),
-          'light'
-        )
-        myChart.setOption(option)
-      })
     }
   }
 }
