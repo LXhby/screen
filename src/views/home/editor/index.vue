@@ -134,7 +134,9 @@
                         </div>
                       </div>
                     </el-col>
-                    <el-col :span="12" />
+                    <el-col :span="12">
+                      <Map />
+                    </el-col>
                   </el-row>
                 </div>
                 <div class="quantityContol">
@@ -230,7 +232,8 @@
                       <div class="nav-title">援助药品疾病类型统计</div>
                     </div>
                     <div class="detail">
-                      <div id="columnar" style="width: 100%; height: 300px" class="padding-box" />
+                      <!-- <div id="columnar" style="width: 100%; height: 300px" class="padding-box" /> -->
+                      <Scatter />
                     </div>
                   </div>
                 </div>
@@ -249,9 +252,11 @@
 <script>
 import { todaydatass, screendatass } from '@/api/datashow'
 import Result from '@/views/datashow/results'
+import Map from '../components/Map'
+import Scatter from '../components/Scatter'
 export default {
   name: 'HomeEditor',
-  components: { Result },
+  components: { Result, Map, Scatter },
   filters: {
     formatNum(val) {
       if (val) {

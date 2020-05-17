@@ -32,6 +32,7 @@
 <script>
 import { queryById, updateViewTimes, getCssStsToken } from '@/api/datashow'
 import { getpicUrl } from '@/utils/upload'
+
 export default {
   data() {
     return {
