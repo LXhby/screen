@@ -22,6 +22,10 @@ import './utils/error-log' // error log
 import * as filters from './filters' // global filters
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
+import scroll from 'vue-seamless-scroll'
+Vue.use(scroll)
+import ECharts from 'vue-echarts'
+Vue.component('chart', ECharts)
 import Moment from 'moment'
 Vue.filter('convertTime', function(data, formatStr) {
   return Moment(data).format(formatStr)

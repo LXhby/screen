@@ -77,7 +77,11 @@
                         <el-col :span="9" class="sm-list txt-center">发放物资价值</el-col>
                       </el-row>
 
-                      <el-scrollbar wrap-class="scrollbar-wrapper">
+                      <vue-seamless-scroll
+                        :data="projectData"
+                        class="seamless-warp"
+                        :class-option="optionSingleHeightTime"
+                      >
                         <div class="list">
                           <el-row
                             v-for="(item, index) in projectData"
@@ -102,7 +106,7 @@
                             </el-col>
                           </el-row>
                         </div>
-                      </el-scrollbar>
+                      </vue-seamless-scroll>
                     </div>
                   </div>
                 </div>
@@ -140,16 +144,17 @@
                   </el-row>
                 </div>
                 <div class="quantityContol">
-                  <div class="city-box" />
                   <h3>质控数据</h3>
 
                   <div class="detail">
-                    <el-row type="flex">
-                      <el-col :span="12">
-                        <div id="columfirst" class="padding-box" />
+                    <el-row type="flex" class="detail-box">
+                      <el-col :span="12" class="col-box">
+                        <h4>月度合格率</h4>
+                        <Lineone :line-data="quantityContolData" />
                       </el-col>
-                      <el-col :span="12">
-                        <div id="columtwo" class="padding-box" />
+                      <el-col :span="12" class="col-box">
+                        <h4>年度同期合格率</h4>
+                        <Lines :line-data="quantityContolData" />
                       </el-col>
                     </el-row>
                   </div>
@@ -199,7 +204,11 @@
                         <el-col :span="8" class="sm-list txt-center txt-center">地址</el-col>
                         <el-col :span="8" class="sm-list txt-center txt-center">详情</el-col>
                       </el-row>
-                      <el-scrollbar wrap-class="scrollbar-wrapper">
+                      <vue-seamless-scroll
+                        :data="projectData"
+                        class="seamless-warp"
+                        :class-option="optionSingleHeightTime"
+                      >
                         <div class="row-bow">
                           <el-row
                             v-for="(item, index) in todayinfo"
@@ -221,7 +230,7 @@
                             </el-col>
                           </el-row>
                         </div>
-                      </el-scrollbar>
+                      </vue-seamless-scroll>
                     </div>
                   </div>
                 </div>
@@ -254,9 +263,11 @@ import { todaydatass, screendatass } from '@/api/datashow'
 import Result from '@/views/datashow/results'
 import Map from '../components/Map'
 import Scatter from '../components/Scatter'
+import Lines from '../components/Line'
+import Lineone from '../components/Lineone'
 export default {
   name: 'HomeEditor',
-  components: { Result, Map, Scatter },
+  components: { Result, Map, Scatter, Lines, Lineone },
   filters: {
     formatNum(val) {
       if (val) {
@@ -288,6 +299,14 @@ export default {
       quantityContolData: []
     }
   },
+  computed: {
+    optionSingleHeightTime() {
+      return {
+        // singleHeight: 24,
+        waitTime: 4000
+      }
+    }
+  },
   created() {
     this.initData()
   },
@@ -308,8 +327,9 @@ export default {
         this.generalData = res.data.generalData
         this.projectData = res.data.projectData
         this.quantityContolData = res.data.quantityContolData
-        this.monthrate()
-        this.monthnum()
+        console.log('this.quantityContolData', this.quantityContolData)
+        // this.monthrate();
+        // this.monthnum();
       })
     },
     showColumnar() {
@@ -348,60 +368,6 @@ export default {
       this.$nextTick(() => {
         const myChart = this.$echarts.init(
           document.getElementById('columfirst'),
-          'light'
-        )
-        myChart.setOption(option)
-      })
-    },
-    monthnum() {
-      var option = {
-        legend: {},
-        tooltip: {},
-        dataset: {
-          // 提供一份数据。
-          source: [
-            {
-              month: '2月',
-              passRate: 2,
-              sampleNum: 23
-            },
-            {
-              month: '3月',
-              passRate: 4,
-              sampleNum: 26
-            },
-            {
-              month: '4月',
-              passRate: 4,
-              sampleNum: 21
-            },
-            {
-              month: '5月',
-              passRate: 8,
-              sampleNum: 20
-            }
-          ]
-        },
-        // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
-        xAxis: { type: 'category', boundaryGap: false },
-        // 声明一个 Y 轴，数值轴。
-        yAxis: {},
-        series: [
-          {
-            type: 'line',
-            name: '月度样本数',
-            encode: {
-              x: 'month',
-              // 将 "product" 列映射到 Y 轴。
-              y: 'sampleNum'
-            }
-          }
-        ]
-      }
-
-      this.$nextTick(() => {
-        const myChart = this.$echarts.init(
-          document.getElementById('columtwo'),
           'light'
         )
         myChart.setOption(option)
