@@ -109,7 +109,34 @@
               </div>
               <div class="center">
                 <div class="center-top">医疗公益项目大数据</div>
-                <div class />
+                <div class="center-one">
+                  <el-row type="flex" class="left">
+                    <el-col :span="12">
+                      <div class="one-item">
+                        <h3 class="nav-title">受益人数</h3>
+                        <div class="item-main">
+                          <img src="../../../../static/img/7.png" alt>
+                          <div class="num">{{ generalData.patientQuantity }}</div>
+                        </div>
+                      </div>
+                      <div class="one-item tww">
+                        <h3 class="nav-title">发放物资数</h3>
+                        <div class="item-main">
+                          <img src="../../../../static/img/7.png" alt>
+                          <div class="num">{{ generalData.materialQuantity }}</div>
+                        </div>
+                      </div>
+                      <div class="one-item">
+                        <h3 class="nav-title">发放物资价值</h3>
+                        <div class="item-main">
+                          <img src="../../../../static/img/7.png" alt>
+                          <div class="num">{{ generalData.totalPrice }}</div>
+                        </div>
+                      </div>
+                    </el-col>
+                    <el-col :span="12" />
+                  </el-row>
+                </div>
                 <div class="quantityContol">
                   <div class="city-box" />
                   <h3>质控数据</h3>
@@ -212,15 +239,19 @@
           </div>
         </div>
       </div>
-      <div class="section">2</div>
+      <div class="section">
+        <Result />
+      </div>
     </full-page>
   </div>
 </template>
 
 <script>
 import { todaydatass, screendatass } from '@/api/datashow'
+import Result from '@/views/datashow/results'
 export default {
   name: 'HomeEditor',
+  components: { Result },
   filters: {
     formatNum(val) {
       if (val) {

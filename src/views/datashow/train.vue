@@ -140,6 +140,9 @@ export default {
         })
       } else {
         this.firstSearch.newsType = null
+        this.$router.replace({
+          name: 'train'
+        })
       }
 
       this.intiData(this.firstSearch)
