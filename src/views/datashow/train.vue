@@ -61,6 +61,7 @@
                             preload="auto"
                             :src="item.video"
                           />
+
                           <div class="content-title">项目培训视频</div>
                           <p />
                         </div>

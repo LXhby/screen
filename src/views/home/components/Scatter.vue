@@ -138,6 +138,7 @@ export default {
               fontSize: '12'
             }
           },
+
           scale: true
         },
         series: [

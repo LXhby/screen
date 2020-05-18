@@ -13,24 +13,32 @@
                       <el-row type="flex" class="row-bg">
                         <el-col :span="6" class="sm-list list-one">
                           <div class="sm-title">捐助企业数</div>
-                          <div class="num">{{ generalData.companyQuantity | formatNum }}</div>
+                          <div class="num">
+                            {{ generalData.companyQuantity | formatNum }}
+                          </div>
                         </el-col>
                         <el-col :span="6" class="sm-list">
                           <div class="item item1">
                             <div class="sm-title">公益医院数</div>
-                            <div class="num">{{ generalData.hospitalQuantity | formatNum }}</div>
+                            <div class="num">
+                              {{ generalData.hospitalQuantity | formatNum }}
+                            </div>
                           </div>
                         </el-col>
                         <el-col :span="6" class="sm-list">
                           <div class="item item1">
                             <div class="sm-title">公益药房数</div>
-                            <div class="num">{{ generalData.drugstoreQuantity | formatNum }}</div>
+                            <div class="num">
+                              {{ generalData.drugstoreQuantity | formatNum }}
+                            </div>
                           </div>
                         </el-col>
                         <el-col :span="6" class="sm-list">
                           <div class="item item1">
                             <div class="sm-title">覆盖疾病类型</div>
-                            <div class="num">{{ generalData.diseaseQuantity | formatNum }}</div>
+                            <div class="num">
+                              {{ generalData.diseaseQuantity | formatNum }}
+                            </div>
                           </div>
                         </el-col>
                       </el-row>
@@ -38,25 +46,33 @@
                         <el-col :span="6" class="sm-list">
                           <div class="item">
                             <div class="sm-title">公益医生数</div>
-                            <div class="num">{{ generalData.doctorQuantity | formatNum }}</div>
+                            <div class="num">
+                              {{ generalData.doctorQuantity | formatNum }}
+                            </div>
                           </div>
                         </el-col>
                         <el-col :span="6" class="sm-list">
                           <div class="item">
                             <div class="sm-title">公益药师数</div>
-                            <div class="num">{{ generalData.druggistQuantity | formatNum }}</div>
+                            <div class="num">
+                              {{ generalData.druggistQuantity | formatNum }}
+                            </div>
                           </div>
                         </el-col>
                         <el-col :span="6" class="sm-list">
                           <div class="item">
                             <div class="sm-title">公益专员数</div>
-                            <div class="num">{{ generalData.commissionerQuantity | formatNum }}</div>
+                            <div class="num">
+                              {{ generalData.commissionerQuantity | formatNum }}
+                            </div>
                           </div>
                         </el-col>
                         <el-col :span="6" class="sm-list">
                           <div class="item">
                             <div class="sm-title">公益护士数</div>
-                            <div class="num">{{ generalData.nurseQuantity | formatNum }}</div>
+                            <div class="num">
+                              {{ generalData.nurseQuantity | formatNum }}
+                            </div>
                           </div>
                         </el-col>
                       </el-row>
@@ -73,8 +89,14 @@
                     <div class="detail">
                       <el-row type="flex" class="row-title">
                         <el-col :span="6" class="sm-list">项目名</el-col>
-                        <el-col :span="9" class="sm-list txt-center">受益人数</el-col>
-                        <el-col :span="9" class="sm-list txt-center">发放物资价值</el-col>
+                        <el-col
+                          :span="9"
+                          class="sm-list txt-center"
+                        >受益人数</el-col>
+                        <el-col
+                          :span="9"
+                          class="sm-list txt-center"
+                        >发放物资价值</el-col>
                       </el-row>
 
                       <vue-seamless-scroll
@@ -90,19 +112,13 @@
                             class="row-bg"
                           >
                             <el-col :span="6" class="sm-list">
-                              {{
-                                item.projectName
-                              }}
+                              {{ item.projectName }}
                             </el-col>
                             <el-col :span="9" class="sm-list txt-center">
-                              {{
-                                item.patientQuantity | formatNum
-                              }}
+                              {{ item.patientQuantity | formatNum }}
                             </el-col>
                             <el-col :span="9" class="sm-list txt-center">
-                              {{
-                                item.totalPrice | formatNum
-                              }}
+                              {{ item.totalPrice | formatNum }}
                             </el-col>
                           </el-row>
                         </div>
@@ -120,14 +136,18 @@
                         <h3 class="nav-title">受益人数</h3>
                         <div class="item-main">
                           <img src="../../../../static/img/7.png" alt>
-                          <div class="num">{{ generalData.patientQuantity }}</div>
+                          <div class="num">
+                            {{ generalData.patientQuantity }}
+                          </div>
                         </div>
                       </div>
                       <div class="one-item tww">
                         <h3 class="nav-title">发放物资数</h3>
                         <div class="item-main">
                           <img src="../../../../static/img/7.png" alt>
-                          <div class="num">{{ generalData.materialQuantity }}</div>
+                          <div class="num">
+                            {{ generalData.materialQuantity }}
+                          </div>
                         </div>
                       </div>
                       <div class="one-item">
@@ -165,7 +185,9 @@
                   <div class="today">
                     <div class="nav-top">
                       <h3>今日数据</h3>
-                      <div class="nav-title">{{ new Date() | convertTime("YYYY/MM/DD") }}</div>
+                      <div class="nav-title">
+                        {{ new Date() | convertTime("YYYY/MM/DD") }}
+                      </div>
                     </div>
                     <el-row class="row-title">
                       <el-col :span="8">
@@ -200,9 +222,18 @@
                       <div class="h-ssm">项目患者实时数据</div>
                       <el-row type="flex" class="item-title">
                         <el-col :span="3" class="sm-list">时间</el-col>
-                        <el-col :span="5" class="sm-list txt-center">项目名称</el-col>
-                        <el-col :span="8" class="sm-list txt-center txt-center">地址</el-col>
-                        <el-col :span="8" class="sm-list txt-center txt-center">详情</el-col>
+                        <el-col
+                          :span="5"
+                          class="sm-list txt-center"
+                        >项目名称</el-col>
+                        <el-col
+                          :span="8"
+                          class="sm-list txt-center txt-center"
+                        >地址</el-col>
+                        <el-col
+                          :span="8"
+                          class="sm-list txt-center txt-center"
+                        >详情</el-col>
                       </el-row>
                       <vue-seamless-scroll
                         :data="projectData"
@@ -216,17 +247,17 @@
                             type="flex"
                             class="row-bg"
                           >
-                            <el-col :span="3" class="sm-list">{{ item.createdStr }}</el-col>
+                            <el-col :span="3" class="sm-list">{{
+                              item.createdStr
+                            }}</el-col>
                             <el-col :span="5" class="sm-list">
-                              {{
-                                item.projectName
-                              }}
+                              {{ item.projectName }}
                             </el-col>
-                            <el-col :span="8" class="sm-list txt-center">{{ item.address }}</el-col>
+                            <el-col :span="8" class="sm-list txt-center">{{
+                              item.address
+                            }}</el-col>
                             <el-col :span="8" class="sm-list txt-center">
-                              {{
-                                item.receiveInfo
-                              }}
+                              {{ item.receiveInfo }}
                             </el-col>
                           </el-row>
                         </div>
@@ -348,5 +379,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
