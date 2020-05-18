@@ -14,7 +14,9 @@ Vue.use(VueFullPage)
 import App from './App'
 import store from './store'
 import router from './router'
-
+import preview from 'vue-photo-preview'
+import 'vue-photo-preview/dist/skin.css'
+Vue.use(preview)
 import './icons' // icon
 import './permission' // permission control
 import './utils/error-log' // error log
@@ -24,13 +26,15 @@ import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 import scroll from 'vue-seamless-scroll'
 Vue.use(scroll)
-import ECharts from 'vue-echarts'
-Vue.component('chart', ECharts)
+// import ECharts from 'vue-echarts'
+// Vue.component('chart', ECharts)
 import Moment from 'moment'
 Vue.filter('convertTime', function(data, formatStr) {
   return Moment(data).format(formatStr)
 })
-
+import vuescroll from 'vuescroll'
+import 'vuescroll/dist/vuescroll.css'
+Vue.use(vuescroll)
 import Axios from 'axios'
 Vue.prototype.$ajax = Axios
 

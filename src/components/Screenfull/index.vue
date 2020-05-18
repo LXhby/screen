@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <!-- <svg-icon
+  <div class="sc-box">
+    <svg-icon
       :icon-class="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
       @click="click"
-    />-->
-    <i class="el-icon-switch-button logout-icon" @click="logout" />
+    />
+    <i class="el-icon-switch-button svg-logout-icon" @click="logout" />
   </div>
 </template>
 
@@ -76,18 +76,26 @@ export default {
 </script>
 
 <style scoped>
-.screenfull-svg {
+.sc-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.svg-icon {
   display: inline-block;
   cursor: pointer;
   fill: #5a5e66;
-  width: 20px;
-  height: 20px;
-  vertical-align: 10px;
-}
-.logout-icon {
-  color: #fff;
+
+  /* vertical-align: 10px; */
   font-size: 20px;
+}
+.svg-logout-icon {
+  color: #fff;
+  font-size: 24px;
   font-weight: bold;
-  line-height: 70px;
+  margin-left: 20px;
+  /* line-height: 70px; */
 }
 </style>

@@ -9,7 +9,9 @@
                 <img :src="item.cover" alt>
               </div>
               <div class="title">{{ item.title }}</div>
-              <div class="time">项目上线日期：{{ getupTimes(item.extInfo) }}</div>
+              <div class="time">
+                项目上线日期：{{ getupTimes(item.timeline) }}
+              </div>
             </div>
           </el-col>
         </el-row>

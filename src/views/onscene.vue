@@ -1,7 +1,10 @@
 <template>
   <div class="zbcommon-content">
     <video id="myVideo" class="video-js">
-      <source src="https://yiidev.cn/hls/test/index.m3u8" type="application/x-mpegURL4">
+      <source
+        src="https://yiidev.cn/hls/test/index.m3u8"
+        type="application/x-mpegURL4"
+      >
     </video>
   </div>
 </template>
@@ -14,7 +17,7 @@ export default {
   methods: {
     initVideo() {
       // 初始化视频方法
-      const myPlayer = this.$video('#myVideo', {
+      const myPlayer = this.$video(document.getElementById('myVideo'), {
         // 确定播放器是否具有用户可以与之交互的控件。没有控件，启动视频播放的唯一方法是使用autoplay属性或通过Player API。
         controls: true,
         // 自动播放属性,muted:静音播放

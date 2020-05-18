@@ -5,17 +5,28 @@
         <el-carousel indicator-position="outside" :autoplay="false">
           <el-carousel-item v-for="item in shuflist" :key="item.id">
             <div class="img-show">
-              <img :src="item.cover" alt class="top-img">
+              <img
+                :src="item.cover"
+                alt
+                class="top-img"
+                preview="0"
+                :preview-text="item.content"
+              >
               <div class="img-tip">{{ item.content }}</div>
             </div>
           </el-carousel-item>
         </el-carousel>
       </div>
-      <el-row :gutter="30">
+      <el-row :gutter="9">
         <el-col v-for="(item, index) in timelist" :key="index" :span="6">
           <div class="grid-content bg-purple">
             <div class="showimg">
-              <img :src="item.cover" alt>
+              <img
+                :src="item.cover"
+                alt
+                preview="1"
+                :preview-text="item.content"
+              >
             </div>
           </div>
         </el-col>
@@ -96,7 +107,7 @@ export default {
 }
 .img-list {
   position: relative;
-  padding-top: 550px;
+  padding-top: 599px;
   width: 100%;
   margin-bottom: 30px;
   .img-show {

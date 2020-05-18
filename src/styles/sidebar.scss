@@ -1,6 +1,6 @@
 #app {
   .el-main-container {
-    height: calc(100vh - 61px);
+    height: calc(100vh - 90px);
     overflow: hidden;
     transition: margin-left 0.28s;
     position: relative;
@@ -23,7 +23,8 @@
 
   //导航设置
   .nav-toplist {
-
+    width: $centerWidth;
+    height: $menuNavHeight;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -36,15 +37,17 @@
       text-align: right;
     }
 
-    .zd-menu-demo {
+    .el-menu {
 
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: $menuNavTextSize;
 
-      .zd-menu-item {
+      .el-menu-item {
         margin: 0 60px;
-
+        font-size: $menuNavTextSize;
+        border-bottom-width: 3px;
 
         // border-bottom-width: 3px;
 
@@ -54,8 +57,16 @@
         }
       }
 
-      .zd-submenu {
+      .el-submenu {
+        font-size: $menuNavTextSize;
         margin: 0 60px;
+
+        .el-submenu__title {
+          font-size: $menuNavTextSize;
+          height: $menuNavHeight;
+          line-height: $menuNavHeight;
+          border-bottom-width: 3px;
+        }
       }
     }
 
@@ -67,6 +78,8 @@
   // menu hover
   .submenu-title-noDropdown,
   .el-submenu__title {
+    font-size: $menuNavTextSize;
+
     &:hover {
       color: $menuHover !important;
     }
@@ -89,7 +102,22 @@
 
 // when menu collapsed
 .el-menu--horizontal {
+  .el-menu-item {
+    height: $menuNavHeight;
+    line-height: $menuNavHeight;
+  }
+
+  .el-menu--popup {
+    .el-menu-item {
+      height: 53px;
+      line-height: 53px;
+      font-size: 20px;
+    }
+  }
+
   &>.el-menu {
+
+
     .svg-icon {
       margin-right: 16px;
     }
@@ -97,6 +125,7 @@
 
   .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {
+
     &:hover {
       // you can use $subMenuHover
       color: #fff !important;

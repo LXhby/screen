@@ -1,26 +1,37 @@
 <template>
   <div :class="{ 'has-logo': showLogo }">
     <el-scrollbar wrap-class="scrollbar-wrapper">
-      <img src="../../../../static/img/logo.png" alt class="logoimg">
+      <img
+        src="../../../../static/img/logo.png"
+        alt
+        class="logoimg"
+        @click="gohome"
+      >
       <div class="nav-toplist">
         <el-menu
+          router
           :background-color="variables.menuBg"
-          :default-active="activeIndex"
           :text-color="variables.menuText"
+          :default-active="activeMenu"
           :active-text-color="variables.menuActiveText"
           class="zd-menu-demo"
           mode="horizontal"
           @select="handleSelect"
         >
-          <el-menu-item index="home" class="zd-menu-item">成果展示</el-menu-item>
+          <el-menu-item class="zd-menu-item" index="/">成果展示</el-menu-item>
           <el-submenu index="2" class="zd-submenu">
-            <template slot="title">风貌展示</template>
-            <el-menu-item index="history">历史记录</el-menu-item>
-            <el-menu-item index="train">培训展示</el-menu-item>
-            <el-menu-item index="perform">项目执行</el-menu-item>
-            <el-menu-item index="construction">团队建设</el-menu-item>
+            <template
+              slot="title"
+            >风貌展示</template>
+            <el-menu-item index="/datashow/history">历史记录</el-menu-item>
+            <el-menu-item index="/datashow/train">培训展示</el-menu-item>
+            <el-menu-item index="/datashow/perform">项目执行</el-menu-item>
+            <el-menu-item index="/datashow/construction">团队建设</el-menu-item>
           </el-submenu>
-          <el-menu-item index="onscene" class="zd-menu-item">连线现场</el-menu-item>
+          <el-menu-item
+            index="/online/onscene"
+            class="zd-menu-item"
+          >连线现场</el-menu-item>
         </el-menu>
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
       </div>
@@ -62,12 +73,16 @@ export default {
     }
   },
   created() {
-    console.log('this.is', this.isFullscreen)
+    this.activeIndex = this.$route.name
+    console.log('this.is', this.$route.path)
   },
   methods: {
     handleSelect(key, keyPath) {
       this.activeIndex = key
       this.$router.push({ name: key })
+    },
+    gohome() {
+      this.$router.push({ name: 'home' })
     }
   }
 }
@@ -75,14 +90,13 @@ export default {
 <style lang="scss">
 .el-scrollbar__view {
   position: relative;
-  .logoimg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    height: 42px;
-    margin-left: 60px;
-    margin-right: 20px;
-  }
+}
+.logoimg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 58px;
+  margin-left: 75px;
 }
 </style>
